@@ -22,7 +22,7 @@ app.post('/comments', (req, res) => {
   comments.push(comment);
   fs.writeFile(commentsPath, JSON.stringify(comments), (err) => {
     if (err) {
-      res.status(500).send('An error occurred');
+      res.status(500).send('An error occurred. Please try again later.');
     } else {
       res.status(201).send('Comment added');
     }
