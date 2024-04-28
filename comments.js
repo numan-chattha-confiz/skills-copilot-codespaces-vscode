@@ -23,6 +23,8 @@ app.post('/comments', (req, res) => {
   fs.writeFile(commentsPath, JSON.stringify(comments), (err) => {
     if (err) {
       res.status(500).send('An error occurred. Please try again later.');
+      console.error('Error writing to comments.json file:', err);
+      console.error('Error writing to comments.json file:', err);
     } else {
       res.status(201).send('Comment added');
     }
@@ -30,6 +32,6 @@ app.post('/comments', (req, res) => {
 });
 
 //start server
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+//app.listen(3000, () => {
+  //console.log('Server is running on port 3000');
+//});
